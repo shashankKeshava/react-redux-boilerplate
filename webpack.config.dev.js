@@ -5,14 +5,14 @@ const path = require('path'); //Provides utilities for working with file and dir
 /* Webpack Structure
     Entry
     Output
-    Loaders: Enable webpack to process more than just JavaScript files 
+    Loaders: Enable webpack to process more than just JavaScript files
     Plugins: Plugings Range from bundle optimization and minification all the way to defining environment-like variables.
  */
 
 const fileMap = {};
 module.exports = {
     entry: {
-        app: './src/client/index.js',
+        app: './src/index.js',
     },
     output: {
         // path.resolve() method resolvd a sequence of paths or path segment into absolute path```
