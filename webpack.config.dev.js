@@ -1,11 +1,12 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
-const path = require('path'); //Provides utilities for working with file and directory paths
+const path = require('path');
+require('shebang-loader'); // Ignore CLI (Command line interface) / hashbang Eg:  #! /usr/bin/env node
+require('json-loader');
 
 /* Webpack Structure
     Entry
     Output
-    Loaders: Enable webpack to process more than just JavaScript files
+    Loaders: Modules Enable webpack to process more than just JavaScript files
     Plugins: Plugings Range from bundle optimization and minification all the way to defining environment-like variables.
  */
 console.log(__dirname);
@@ -15,15 +16,26 @@ module.exports = {
         app: './src/index.js',
     },
     output: {
-        // path.resolve() method resolvd a sequence of paths or path segment into absolute path
-        path : path.resolve(__dirname, './public'),
-        filename: 'webpack.bundle.js',
+        path: path.resolve(__dirname, './public'),
+        publicPath: '/public/',
+        filename: 'build.js',
     },
     module: {
-        rules: [{ test: /\.txt$/, use: 'raw-loader' }],
+        rules: [
+            {
+                test: '/.js$/',
+                use: ['shebang-loader'],
+            },
+            { test: /\.json$/, loader: ['json-loader'] },
+        ],
     },
-    plugins: [
-        new webpack.optimize.UglifyJsPlugin(),
-        new HtmlWebpackPlugin({ template: './src/index.html' }),
-    ],
+    resolve: {
+        /*extensions: ['.webpack.js', '.web.js', '.js']*/
+    },
+    node: {
+        console: true,
+        fs: 'empty',
+        net: 'empty',
+        tls: 'empty',
+    },
 };

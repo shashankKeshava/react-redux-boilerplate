@@ -4,7 +4,8 @@
     "description": "Boilerplate for React+Redux webapps",
     "main": "webpack.config.dev.js",
     "dependencies": {
-        "html-webpack-plugin": "^2.30.1",
+        "json-loader": "^0.5.7",
+        "shebang-loader": "^0.0.1",
         "webpack": "^3.10.0",
         "webpack-dev-server": "^2.9.7"
     },
