@@ -4,6 +4,7 @@
     "description": "Boilerplate for React+Redux webapps",
     "main": "webpack.config.dev.js",
     "dependencies": {
+        "babel-core": "^6.26.0",
         "babel-loader": "^7.1.2",
         "webpack": "^3.10.0"
     },
