@@ -1,4 +1,3 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin'); //installed via npm
 const webpack = require('webpack');
 const path = require('path');
 
@@ -7,23 +6,26 @@ const path = require('path');
     Output
     Loaders: Modules Enable webpack to process more than just JavaScript files
     Plugins: Plugings Range from bundle optimization and minification all the way to defining environment-like variables.
- */
-console.log(path.resolve(__dirname, './public'));
-const fileMap = {};
-
+*/
 module.exports = {
+    // First file in your dependency graph(first file in app)
     entry: {
-        app: path.resolve(__dirname,'./src/index.js'),
+        app: path.resolve(__dirname, './src/index.js'),
     },
     output: {
-        path: path.resolve(__dirname, '/public'),
-        filename: 'build.js',
+        filename: 'bundle.js',
+        path: path.resolve(__dirname, 'public'),
     },
     module: {
         rules: [{ test: /\.txt$/, use: 'raw-loader' }],
     },
-    plugins: [
-        new webpack.optimize.UglifyJsPlugin(),
-        new HtmlWebpackPlugin({ template: './src/index.html' }),
-    ],
+    //loaders
+    modules: {
+        rules: [
+            {
+                test: /\.js$/,
+                use: 'babel-loader',
+            }
+        ],
+    },
 };

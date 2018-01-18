@@ -1,2 +1,5 @@
 # Ignore Node Modules Dependencies 
 /node_modules
+
+#Ignore Bundles
+/public
