@@ -9,21 +9,23 @@
         "webpack": "^3.10.0"
     },
     "scripts": {
-        "dev": "webpack --config webpack.config.js && webpack --watch",
-        "watch": "webpack --watch",
-        "test": "webpack src/index.js bundle.js"
+        "build": "webpack --config webpack.config.js --verbose",
+        "dev": "yarn build -- --watch",
+        "debug": "yarn build -- --env.debug=1",
+        "prod": "yarn build -- --env.platform='PROD'"
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/shashankKeshava/react-redux-boilerplate.git"
+        "url":
+            "git+https://github.com/shashankKeshava/react-redux-boilerplate.git"
     },
-    "keywords": [
-        "boilerplate"
-    ],
+    "keywords": ["boilerplate"],
     "author": "Shashank k <keshavashashank@gmail.com>",
     "license": "ISC",
     "bugs": {
-        "url": "https://github.com/shashankKeshava/react-redux-boilerplate/issues"
+        "url":
+            "https://github.com/shashankKeshava/react-redux-boilerplate/issues"
     },
-    "homepage": "https://github.com/shashankKeshava/react-redux-boilerplate#readme"
+    "homepage":
+        "https://github.com/shashankKeshava/react-redux-boilerplate#readme"
 }
