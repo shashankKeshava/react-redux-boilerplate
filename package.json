@@ -6,26 +6,27 @@
     "dependencies": {
         "babel-core": "^6.26.0",
         "babel-loader": "^7.1.2",
-        "webpack": "^3.10.0"
+        "html-webpack-plugin": "^2.30.1",
+        "webpack": "^3.10.0",
+        "webpack-merge": "^4.1.1"
     },
     "scripts": {
         "build": "webpack --config webpack.config.js --verbose",
-        "dev": "yarn build -- --watch",
-        "debug": "yarn build -- --env.debug=1",
-        "prod": "yarn build -- --env.platform='PROD'"
+        "dev": "yarn build -- --env=dev --watch",
+        "debug": "yarn build -- --env=1",
+        "prod": "yarn build -- --env=prod"
     },
     "repository": {
         "type": "git",
-        "url":
-            "git+https://github.com/shashankKeshava/react-redux-boilerplate.git"
+        "url": "git+https://github.com/shashankKeshava/react-redux-boilerplate.git"
     },
-    "keywords": ["boilerplate"],
+    "keywords": [
+        "boilerplate"
+    ],
     "author": "Shashank k <keshavashashank@gmail.com>",
     "license": "ISC",
     "bugs": {
-        "url":
-            "https://github.com/shashankKeshava/react-redux-boilerplate/issues"
+        "url": "https://github.com/shashankKeshava/react-redux-boilerplate/issues"
     },
-    "homepage":
-        "https://github.com/shashankKeshava/react-redux-boilerplate#readme"
+    "homepage": "https://github.com/shashankKeshava/react-redux-boilerplate#readme"
 }
