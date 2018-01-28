@@ -1,8 +1,10 @@
+'use strict';
+
 const webpack = require('webpack');
 const htmlWebpack = require('html-webpack-plugin');
 
 const commonPaths = require('./common-paths');
-
+console.log(commonPaths.srcPath);
 module.exports = {
     // Entry: First file webpack starts(your dependency graph)
     entry: {
@@ -18,11 +20,14 @@ module.exports = {
         loaders: [
             {
                 test: /\.(js|jsx)$/,
+                include: [commonPaths.inputPath],
                 loader: ['babel-loader'],
-                include: [commonPaths.srcPath],
                 query: {
-                    presets: ['react', 'es2015'],
+                    presets: ['es2015', 'react'],
                     plugins: ['transform-runtime'],
+                },
+                options: {
+                    cacheDirectory: true,
                 },
             },
         ],
