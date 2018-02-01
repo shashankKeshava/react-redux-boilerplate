@@ -1,3 +1,10 @@
 # React Redux Boilerplate
 
-Work In Progress
+## Install all dependencies
+`yarn or npm install`
+
+## Development Build
+`yarn build:dev`
+
+## Build with Watch
+`yarn dev`
