@@ -4,7 +4,7 @@ const webpack = require('webpack');
 const htmlWebpack = require('html-webpack-plugin');
 
 const commonPaths = require('./common-paths');
-console.log(commonPaths.srcPath);
+
 module.exports = {
     // Entry: First file webpack starts(your dependency graph)
     entry: {
@@ -14,24 +14,23 @@ module.exports = {
     output: {
         filename: 'bundle.js',
         path: commonPaths.outputPath,
+        publicPath: '/',
     },
     // Loaders:  How to treat files before adding to dependency graphs
     module: {
-        loaders: [
+        rules: [
             {
                 test: /\.(js|jsx)$/,
                 include: [commonPaths.inputPath],
-                loader: ['babel-loader'],
-                query: {
-                    presets: ['es2015', 'react'],
-                    plugins: ['transform-runtime'],
-                },
-                options: {
-                    cacheDirectory: true,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: [['es2015', { modules: false }], 'react'],
+                        plugins: ['transform-runtime'],
+                        cacheDirectory: true,
+                    },
                 },
             },
-        ],
-        rules: [
             {
                 test: /\.png$/,
                 use: [
@@ -46,5 +45,10 @@ module.exports = {
         ],
     },
     // Plugins: Extremely Customisable
-    plugins: [new webpack.ProgressPlugin(), new htmlWebpack()],
+    plugins: [
+        new webpack.ProgressPlugin(),
+        new htmlWebpack({
+            template: 'src/index.html',
+        }),
+    ],
 };
