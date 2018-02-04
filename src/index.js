@@ -1,6 +1,7 @@
-import { React, Component } from 'react';
+import React, { Component } from 'react';
+import { render } from 'react-dom';
 
-class App extends React.Component {
+class App extends Component {
     render() {
         return (
             <div>
@@ -10,4 +11,4 @@ class App extends React.Component {
     }
 }
 
-React.render(<App />, document.getElementById('app'));
+render(<App />, document.getElementById('app'));
