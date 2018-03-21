@@ -12,4 +12,4 @@
 ### Things to Do
 - [ ] Stable development build
 - [ ] Integrate Redux
-- [ ] Prettier integration
+- [ ] Prettier and SASS integration
