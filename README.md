@@ -8,3 +8,8 @@
 
 ## Build with Watch
 `yarn dev`
+
+### Things to Do
+- [ ] Stable development build
+- [ ] Integrate Redux
+- [ ] Prettier integration
