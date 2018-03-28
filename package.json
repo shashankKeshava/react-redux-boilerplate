@@ -4,8 +4,11 @@
     "description": "Boilerplate for React+Redux webapps",
     "main": "webpack.config.dev.js",
     "dependencies": {
+        "extensible-duck": "^1.4.0",
         "react": "^16.2.0",
-        "react-dom": "^16.2.0"
+        "react-dom": "^16.2.0",
+        "react-redux": "^5.0.7",
+        "redux": "^3.7.2"
     },
     "scripts": {
         "build": "webpack --config webpack.config.js --verbose",
