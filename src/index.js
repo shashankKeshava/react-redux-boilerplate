@@ -1,14 +1,17 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { render } from 'react-dom';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import rootReducer from './store/combinedReducer';
 
-class App extends Component {
-    render() {
-        return (
-            <div>
-                <h1>Welcome to React Boilerplate</h1>
-            </div>
-        );
-    }
-}
+// Root Container
+import {App} from './container/app/index'
 
-render(<App />, document.getElementById('app'));
+const store = createStore(rootReducer);
+
+render(
+    <Provider store={store}>
+        <App />
+    </Provider>,
+    document.getElementById('root')
+);
