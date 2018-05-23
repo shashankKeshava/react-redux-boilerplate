@@ -21,7 +21,8 @@ module.exports = {
         rules: [
             {
                 test: /\.(js|jsx)$/,
-                include: [commonPaths.inputPath],
+                include: [commonPaths.srcPath],
+                exclude: /node_modules/,
                 use: {
                     loader: 'babel-loader',
                     options: {
@@ -33,6 +34,7 @@ module.exports = {
             },
             {
                 test: /\.png$/,
+                exclude: /node_modules/,
                 use: [
                     {
                         loader: 'url-loader',
