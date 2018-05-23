@@ -50,7 +50,7 @@ module.exports = {
     plugins: [
         new webpack.ProgressPlugin(),
         new htmlWebpack({
-            template: 'src/index.html',
+            template: `${commonPaths.outputPath}/index.html`,
         }),
     ],
 };
