@@ -10,7 +10,7 @@
 `yarn dev`
 
 ### Things to Do
-- [ ] Stable development build
 - [ ] Create build for statics file types
-- [ ] Integrate Redux
 - [ ] Prettier and SASS integration
+- [x] Integrate Redux
+- [x] Stable development build
