@@ -18,15 +18,18 @@ module.exports = {
     },
     // Loaders:  How to treat files before adding to dependency graphs
     module: {
-        rules: [
-            {
+        rules: [{
                 test: /\.(js|jsx)$/,
                 include: [commonPaths.srcPath],
                 exclude: /node_modules/,
                 use: {
                     loader: 'babel-loader',
                     options: {
-                        presets: [['es2015', { modules: false }], 'react'],
+                        presets: [
+                            ['es2015', {
+                                modules: false
+                            }], 'react', 'airbnb'
+                        ],
                         plugins: ['transform-runtime'],
                         cacheDirectory: true,
                     },
@@ -35,14 +38,12 @@ module.exports = {
             {
                 test: /\.png$/,
                 exclude: /node_modules/,
-                use: [
-                    {
-                        loader: 'url-loader',
-                        options: {
-                            limit: 1000,
-                        },
+                use: [{
+                    loader: 'url-loader',
+                    options: {
+                        limit: 1000,
                     },
-                ],
+                }, ],
             },
         ],
     },
