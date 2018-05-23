@@ -8,7 +8,7 @@ import thunk from "redux-thunk";
 import Reducer from './store/combinedReducer';
 
 // Root Container
-import App from './container/app/index'
+import App from './container/App/index'
 
 // Define Initial State
 const initialState={}
