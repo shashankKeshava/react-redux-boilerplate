@@ -46,7 +46,7 @@ module.exports = {
             },
         ],
     },
-    // Plugins: Extremely Customisable
+    // Plugins: Extremely Customizable
     plugins: [
         new webpack.ProgressPlugin(),
         new htmlWebpack({

@@ -6,15 +6,18 @@ import {createLogger} from "redux-logger";
 import thunk from "redux-thunk";
 
 import Reducer from './store/combinedReducer';
+import createSagaMiddleware from 'redux-saga'
 
 // Root Container
 import App from './container/App/index'
 
 // Define Initial State
 const initialState={}
+// create the saga middleware
+const sagaMiddleware = createSagaMiddleware()
 
 const logger=createLogger({timestamp:true})
-const store = createStore(Reducer,initialState,compose(applyMiddleware(thunk,logger),window.devToolsExtension
+const store = createStore(Reducer,initialState,compose(applyMiddleware(thunk,logger,sagaMiddleware),window.devToolsExtension
 ? window.devToolsExtension()
 : f => f),
 /* preloadedState, */
