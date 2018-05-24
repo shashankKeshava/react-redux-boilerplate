@@ -7,11 +7,5 @@ module.exports = {
         port: 8080,
     },
     module: {
-        rules: [
-            {
-                test: /\.css$/,
-                use: ['style-loader', 'css-loader'],
-            },
-        ],
     },
 };

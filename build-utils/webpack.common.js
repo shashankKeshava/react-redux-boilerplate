@@ -1,7 +1,8 @@
 'use strict';
 
 const webpack = require('webpack');
-const htmlWebpack = require('html-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+var ProgressBarPlugin = require('progress-bar-webpack-plugin');
 
 const commonPaths = require('./common-paths');
 
@@ -44,14 +45,20 @@ module.exports = {
                         limit: 1000,
                     },
                 }, ],
-            },
+            }, {
+                test: /\.(s*)css$/,
+                use: ['style-loader', 'css-loader', 'sass-loader'],
+                include: [commonPaths.srcPath],
+            }
         ],
     },
     // Plugins: Extremely Customizable
     plugins: [
-        new webpack.ProgressPlugin(),
-        new htmlWebpack({
-            template: `${commonPaths.outputPath}/index.html`,
-        }),
+        new ProgressBarPlugin(),
+        new HtmlWebpackPlugin({
+            // HTML Title
+            title:'React Redux BoilerPlate',
+            template:`${commonPaths.outputPath}/index.html`
+        })
     ],
 };
