@@ -4,10 +4,10 @@
 `yarn or npm install`
 
 ## Development Build
-`yarn build:dev`
-
-## Build with Watch
 `yarn dev`
+
+## Build
+`yarn build`
 
 ### Things to Do
 - [ ] Create build for statics file types

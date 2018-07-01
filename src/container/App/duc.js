@@ -2,23 +2,25 @@
 
 import Duck from 'extensible-duck';
 
-export default new Duck({
+export const AppDuc = new Duck({
     namespace: 'app-duc',
-    store: 'App',
+    store: 'app',
     types: ['LOAD'],
-    initialState: {},
+    initialState: {
+        container: 'App Container',
+    },
     reducer: (state, action, duck) => {
         switch (action.type) {
-            default: return state;
+            default:
+                return state;
         }
     },
     selectors: {
-        root: state => state
+        root: state => state,
     },
-    creators: (duck) => ({
+    creators: duck => ({
         loadPage: () => ({
-            type: duck.types.LOAD
-        })
-    })
-
-})
+            type: duck.types.LOAD,
+        }),
+    }),
+});
