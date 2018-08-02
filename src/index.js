@@ -9,7 +9,7 @@ import Reducer from './store/combinedReducer';
 import createSagaMiddleware from 'redux-saga';
 
 // Root Container
-import App from './container/app/';
+import App from './container/App/';
 
 // Define Initial State
 const initialState = {};
